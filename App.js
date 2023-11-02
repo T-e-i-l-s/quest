@@ -1,20 +1,15 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import Page from "./navigate" // Подгружаем файл навигации, который перенаправит на нужную страницу
+
+import * as Font from 'expo-font';// Библиотека для использования шрифтов
+
+// Загружаем шрифты
+Font.loadAsync({
+  'roboto': require('./assets/fonts/Roboto-Medium.ttf'),// Загружаем шрифт roboto 
+});
 
 export default function App() {
+  // Рендерим экран
   return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
+    <Page/> //вызываем файл навигации, который перенаправит на нужную страницу
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
